@@ -18,11 +18,19 @@ section {
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.png {
+    width: 100px;
+    height: 100px;
+}
 footer {
     background-color: #333;
     color: white;
     padding: 10px;
-    position: fixed;
+    position: bottom;
     bottom: 0;
     width: 100%;
 }
