@@ -4,23 +4,23 @@ body {
       padding: 0;
       line-height: 1.6;
       text-align: center;
-    }
+}
 
-    header {
+header {
       background: #333;
       color: #fff;
       padding: 1rem;
       text-align: center;
-    }
+}
 
-    nav ul {
+nav ul {
       list-style: none;
       padding: 0;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       margin: 1rem 0 0;
-    }
+}
 
     nav ul li {
       margin: 0 1rem;
@@ -56,7 +56,107 @@ body {
       margin: 0.5rem 0;
     }
 
+    .project {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: #ccc;
+    }
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .profile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
     
+    .profile img {
+
+      height: 150px;
+      width: auto;
+      
+    }
+
+    .LinkedIn-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 0.5rem;
+    }
+
+    img{
+      max-width: 10%;
+      height: auto;
+      width: auto;
+    }
+
+    .slider {
+      position: relative;
+      max-width: 100%;
+      min-height: fit-content;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      width: auto;
+    }
+    .slides img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }    
+    .slider-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+    }
+    .slider-buttons button {
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2rem;
+      background-color: black;
+    }
 
     @media (max-width: 600px) {
       nav ul {

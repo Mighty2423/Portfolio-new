@@ -30,7 +30,17 @@
 <main>
   <h2>About</h2>
   <p>This page contains background about Alton Sanford White V, his education, and journey into IT.</p>
-
+  <section class="slideshow">
+    <div class="slider">
+      <div class="slides" id="slides">
+        <!-- Images will be injected by JS -->
+      </div>
+      <div class="slider-buttons">
+        <button onclick="moveSlide(-1)">❮</button>
+        <button onclick="moveSlide(1)">❯</button>
+      </div>
+    </div>    
+  </section>  
   <section>
     <h3>My Journey</h3>
     <p>I began my journey in technology driven by a passion for understanding how systems work and a strong desire to solve real-world problems. 
@@ -42,5 +52,6 @@
   <footer>
     <p>&copy; 2025 Alton Sanford White V. All rights reserved.</p>
   </footer>
+  <script src="js/slider.js"></script>
 </body>
 </html>
