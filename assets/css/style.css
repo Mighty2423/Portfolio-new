@@ -97,6 +97,17 @@ body {
   height: auto;
 }
 
+footer {
+  background-color: #1f1f1f;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: fit-content;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .nav-list {
