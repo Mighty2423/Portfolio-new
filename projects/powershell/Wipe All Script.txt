@@ -1,0 +1,39 @@
+# WARNING: This script will completely wipe the system. Use with extreme caution.
+# Run this script with administrator privileges.
+
+$confirmation = Read-Host "This will completely wipe all data from this system. Type 'CONFIRM' to proceed."
+if ($confirmation -ne "CONFIRM") {
+    Write-Host "Operation canceled." -ForegroundColor Yellow
+    exit
+}
+
+# Disable Protection Measures
+Write-Host "Disabling Windows Defender and security features..." -ForegroundColor Yellow
+Set-MpPreference -DisableRealtimeMonitoring $true
+Set-MpPreference -DisableBehaviorMonitoring $true
+Set-MpPreference -DisableBlockAtFirstSeen $true
+
+# Format All Drives Except Boot Drive
+$drives = Get-PhysicalDisk | Where-Object { $_.MediaType -eq "HDD" -or $_.MediaType -eq "SSD" }
+foreach ($drive in $drives) {
+    $diskNumber = $drive.DeviceId
+    Write-Host "Wiping Drive: $diskNumber" -ForegroundColor Red
+    Get-Disk $diskNumber | Clear-Disk -RemoveData -Confirm:$false
+}
+
+# Delete All Users and Reset System
+Write-Host "Removing all users except built-in Administrator..." -ForegroundColor Red
+Get-WmiObject Win32_UserAccount | Where-Object { $_.LocalAccount -eq $true -and $_.Name -ne "Administrator" } | ForEach-Object {
+    Remove-LocalUser -Name $_.Name
+}
+
+# Overwrite Free Space to Prevent Recovery
+Write-Host "Overwriting free space for data security..." -ForegroundColor Red
+cipher /w:C:\
+
+# Factory Reset (Last Resort)
+Write-Host "Resetting Windows to factory state..." -ForegroundColor Red
+systemreset -factoryreset
+
+Write-Host "System wipe complete. The system will shut down now." -ForegroundColor Green
+Stop-Computer -Force

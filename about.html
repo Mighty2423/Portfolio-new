@@ -2,56 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About page of Alton Sanford White V's portfolio." />
-  <meta property="og:title" content="About - Alton Sanford White V" />
-  <meta property="og:description" content="Learn more about Alton's journey, skills, and motivation in IT." />
-  <meta property="og:image" content="/images/preview.jpg" />
-  <meta property="og:url" content="https://yourdomain.com/about.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <title>About</title>
-  <link rel="stylesheet" href="/css/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>Alton Sanford White V</h1>
-    <nav aria-label="Main Navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="Timeline.html">Status</a></li>
-        <li><a href="Projects.html">Projects</a></li>
-        <li><a href="powershell.html">PowerShell Toolkit</a></li>
-      </ul>
-    </nav>
-  </header>
-<main>
-  <h2>About</h2>
-  <p>This page contains background about Alton Sanford White V, his education, and journey into IT.</p>
-  <section class="slideshow">
-    <div class="slider">
-      <div class="slides" id="slides">
-        <!-- Images will be injected by JS -->
-      </div>
-      <div class="slider-buttons">
-        <button onclick="moveSlide(-1)">❮</button>
-        <button onclick="moveSlide(1)">❯</button>
-      </div>
-    </div>    
-  </section>  
-  <section>
-    <h3>My Journey</h3>
-    <p>I began my journey in technology driven by a passion for understanding how systems work and a strong desire to solve real-world problems. 
-    After earning my degree in Computer Information Technology, I honed my skills in scripting with PowerShell, data management with SQL, 
-    and development using Python and C#. I'm constantly learning and expanding my toolkit, especially in cybersecurity, where I'm eager 
-    to protect systems and data with proactive strategies.</p>
-  </section>
-</main>
-  <footer>
-    <p>&copy; 2025 Alton Sanford White V. All rights reserved.</p>
-  </footer>
-  <script src="js/slider.js"></script>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <main class="content">
+    <h1>About Me</h1>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+      <img class="slide" src="assets/images/gallery/alton.jpg" alt="Slide 1">
+      <img class="slide" src="assets/images/gallery/build.webp" alt="Slide 2">
+      <img class="slide" src="assets/images/gallery/busy.jpg" alt="Slide 3">
+      <img class="slide" src="assets/images/gallery/good.jpg" alt="Slide 4">
+    </div>
+
+    <p>Hello, my name is Alton White. I was born in Auburn on February 15, 1999. Raised in a military family, I moved ten times and have seen all of the U.S. except Alaska and California. As an Air Force brat, I matured quickly in some areas and missed opportunities in others. I’m the eldest of four children and deeply value my parents’ support and influence.</p>
+    <p>My hobbies include plastic model building, exercising, drawing, tabletop and video gaming. I play the trombone and trumpet, and I’m a fan of anime and K-dramas. My dad and I built models together since I was four, and I’ve grown to love building Gundam from mecha anime. I’m also into Warhammer 40K, Magic the Gathering, and Marvel/DC comics. I enjoy drawing in a style influenced by manga and anime.</p>
+    <p>I achieved my Eagle Scout award in 2016 after digitizing nearly 80 pages of logs for the North Hampton Historical Society. It taught me a lot about delegation and time management. I hold an associate degree in Computer Network Engineering & Cybersecurity from Pierce College and am currently pursuing a bachelor's in CIT.</p>
+    <p>My personal motto: “The only thing you can change about the past is how you feel about it in the present.” – Yōsuke Kuroda</p>
+  </main>
+   <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 10000); // Change every 10 seconds
+    }
+
+    window.onload = showSlides;
+  </script>
 </body>
 </html>
