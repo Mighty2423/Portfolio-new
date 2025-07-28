@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -16,14 +17,45 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <main class="content">
-    <h1>My Projects</h1>
-    <ul class="project-list">
-      <li><a href="projects/powershell/index.html">PowerShell Projects</a></li>
-      <li><a href="projects/python/index.html">Python Projects</a></li>
-      <li><a href="projects/cybersecurity/index.html">Cybersecurity Projects</a></li>
-      <li><a href="projects/csharp/index.html">C# Projects</a></li>
-    </ul>
+  <main>
+    <section class="projects">
+      <h1>My Projects</h1>
+      <p>Here are a few of my technical projects across scripting, security, databases, and system administration.</p>
+    
+      <div class="project-grid">
+    
+        <div class="project-card">
+          <h2>SQL Cleanup Toolkit</h2>
+          <p>A PowerShell toolkit to detect and clean up old or unused SQL Server components.</p>
+          <p><strong>Tools:</strong> PowerShell, Windows Registry, SQL Server</p>
+          <a href="projects/powershell/index.html" target="_blank">View Project</a>
+        </div>
+    
+        <div class="project-card">
+          <h2>Cybersecurity Lab Build</h2>
+          <p>Created a local attack/defense lab using pfSense, Kali Linux, and simulated targets.</p>
+          <p><strong>Tools:</strong> VMware, Kali Linux, pfSense, Metasploit</p>
+          <a href="projects/cybersecurity/index.html" target="_blank">View Project</a>
+        </div>
+    
+        <div class="project-card">
+          <h2>Dockerized PostgreSQL with Automation</h2>
+          <p>Built and deployed PostgreSQL in a Docker container with scripts for quick setup.</p>
+          <p><strong>Tools:</strong> Docker, PostgreSQL, Bash, SQL</p>
+          <a href="#" target="_blank">GitHub Repo (Coming Soon)</a>
+        </div>
+    
+        <div class="project-card">
+          <h2>Resume & Portfolio Website</h2>
+          <p>This site! Designed to showcase my certifications, projects, and experience.</p>
+          <p><strong>Tools:</strong> HTML, CSS, GitHub Pages, VS Code</p>
+          <a href="https://whitev.wiki/" target="_blank">Live Site</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
   </main>
 </body>
 <footer>
