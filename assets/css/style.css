@@ -1,10 +1,37 @@
+:root {
+  --heading-font: 'Roboto', sans-serif;
+  --paragraph-font: 'Roboto Mono', monospace;
+
+  /* Light mode */
+  --background-color: #f9fafb;
+  --primary-color: #1e40af;
+  /* buttons, main links */
+  --secondary-color: #475569;
+  /* navbar, hero, section headers */
+  --text-color: #111827;
+  --footer-color: #ffffff;
+  /* cards/sections */
+  --accent-color: #dc2626;
+  /* subtle highlight (danger/important) */
+}
+
+.dark-mode {
+  --background-color: #111827;
+  --primary-color: #3b82f6;
+  --secondary-color: #94a3b8;
+  --text-color: #f9fafb;
+  --footer-color: #1f2937;
+  --accent-color: #f87171;
+}
+
 /* === GLOBAL BASE === */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: var(--paragraph-font);
   line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--text-color);
   padding: 0 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* === SECTION SPACING === */
@@ -12,16 +39,17 @@ section {
   margin: 2rem auto;
   max-width: 900px;
   padding: 1rem;
-  background-color: #ffffff;
+  background-color: var(--footer-color);
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
 
 /* === HEADERS === */
 h1,
 h2 {
   margin-bottom: 0.5rem;
-  color: #1f1f1f;
+  color: var(--text-color);
 }
 
 p,
@@ -30,13 +58,14 @@ li {
   margin-bottom: 0.75rem;
 }
 
-/* === NAVBAR RESPONSIVENESS === */
+/* === NAVBAR === */
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: #1f1f1f;
+  background-color: var(--secondary-color);
   padding: 1rem;
   flex-wrap: wrap;
+  transition: background-color 0.3s ease;
 }
 
 .nav-list {
@@ -58,8 +87,9 @@ li {
 .hero {
   text-align: center;
   padding: 3rem 1rem;
-  background-color: #dbeafe;
+  background-color: var(--secondary-color);
   border-radius: 12px;
+  transition: background-color 0.3s ease;
 }
 
 .hero h1 {
@@ -75,11 +105,12 @@ li {
 .btn {
   display: inline-block;
   padding: 0.75rem 1.25rem;
-  background-color: #2563eb;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--background-color);
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 /* === PROJECT CARD LAYOUT === */
@@ -90,11 +121,12 @@ li {
 }
 
 .project-card {
-  background-color: #f9fafb;
+  background-color: var(--footer-color);
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  border: 1px solid #111111;
 }
 
 .project-card:hover {
@@ -113,7 +145,8 @@ footer {
   margin-top: 3rem;
   padding: 1rem;
   font-size: 0.9rem;
-  color: #666;
+  background-color: var(--footer-color);
+  transition: color 0.3s ease;
 }
 
 /* === SLIDESHOW BASIC RESPONSIVE FIX === */
